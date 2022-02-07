@@ -1,14 +1,7 @@
-import React from "react";
-import { View, Text } from 'react-native';
+import React from 'react';
 
-export default function App(){
-  return (
-    <View style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <Text>React Native</Text>
-    </View>
-  );
+import Home from './src/pages/Home';
+
+export default function App() {
+  return <Home />
 }
