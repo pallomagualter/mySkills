@@ -4,7 +4,9 @@ import { View, Text, StyleSheet, TextInput, Platform, TouchableOpacity } from 'r
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome, Palloma</Text>
+      <Text style={styles.title}>
+        Welcome, Palloma
+      </Text>
 
       <TextInput
         style={styles.input}
@@ -12,9 +14,16 @@ export default function App() {
         placeholderTextColor="#55"
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        activeOpacity={.7}
+      >
         <Text style={styles.buttonText}>Add</Text>
       </TouchableOpacity>
+
+      <Text style={[styles.title], { marginTop: 50 }}>
+        My Skills
+      </Text>
     </View>
   );
 }
