@@ -1,7 +1,16 @@
-import React from "react";
-import { View, Text, StyleSheet, TextInput, Platform, TouchableOpacity } from 'react-native';
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Platform,
+  TouchableOpacity
+} from 'react-native';
 
 export default function App() {
+  const [newSkill, setNewSkill] = useState();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
@@ -11,7 +20,8 @@ export default function App() {
       <TextInput
         style={styles.input}
         placeholder="New skill"
-        placeholderTextColor="#55"
+        placeholderTextColor="#555"
+        onChangeText={setNewSkill}
       />
 
       <TouchableOpacity
@@ -21,8 +31,8 @@ export default function App() {
         <Text style={styles.buttonText}>Add</Text>
       </TouchableOpacity>
 
-      <Text style={[styles.title], { marginTop: 50 }}>
-        My Skills
+      <Text style={[styles.title, { marginTop: 50 }]}>
+        {newSkill}
       </Text>
     </View>
   );
