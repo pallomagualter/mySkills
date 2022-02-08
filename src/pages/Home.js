@@ -9,7 +9,12 @@ import {
 } from 'react-native';
 
 export default function App() {
-  const [newSkill, setNewSkill] = useState();
+  const [newSkill, setNewSkill] = useState('');
+  const [mySkills, setMySkills] = useState([]);
+
+  function handleAddNewSkill() {
+    setMySkills(oldState => [...oldState, newSkill])
+  }
 
   return (
     <View style={styles.container}>
@@ -27,13 +32,25 @@ export default function App() {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={.7}
+        onPress={handleAddNewSkill}
       >
         <Text style={styles.buttonText}>Add</Text>
       </TouchableOpacity>
 
-      <Text style={[styles.title, { marginTop: 50 }]}>
-        {newSkill}
+      <Text style={[styles.title, { marginVertical: 50 }]}>
+        My Skills
       </Text>
+
+      {
+        mySkills.map(skill => (
+          <TouchableOpacity key={skill} style={styles.buttonSkill}>
+            <Text style={styles.textSkill}>
+              {skill}
+            </Text>
+          </TouchableOpacity>
+        ))
+      }
+
     </View>
   );
 }
@@ -70,5 +87,17 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 17,
     fontWeight: 'bold'
+  },
+  buttonSkill: {
+    backgroundColor: '#1F1E25',
+    padding: 15,
+    borderRadius: 50,
+    alignItems: 'center',
+    marginVertical: 10
+  },
+  textSkill: {
+    color: '#fff',
+    fontSize: 22,
+    fontWeight: 'bold',
   },
 });
