@@ -18,12 +18,13 @@
 <br>
 
 <p align="center">
-  <img alt="appMySkills" src="" width="35%">
+  <img alt="appMySkills" src="https://github.com/pallomagualter/mySkills/blob/main/appMySkills.png" width="35%">
 </p>
 
 ## 🚀 Tecnologias
 
 - [React Native](https://facebook.github.io/react-native/)
+- [Typescript](https://reactnative.dev/docs/typescript)
 
 ## 💻 Projeto
 
